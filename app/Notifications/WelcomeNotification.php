@@ -2,14 +2,13 @@
 
 namespace App\Notifications;
 
-use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
+use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class WelcomeNotification extends Notification implements ShouldQueue
+class WelcomeNotification extends Notification
 {
-    use Queueable;
     public function __construct()
     {
     }
@@ -31,4 +30,6 @@ class WelcomeNotification extends Notification implements ShouldQueue
     {
         return [];
     }
+
+
 }

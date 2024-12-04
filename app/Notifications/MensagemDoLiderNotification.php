@@ -8,9 +8,8 @@ use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class MensagemDoLiderNotification extends Notification implements ShouldQueue
+class MensagemDoLiderNotification extends Notification
 {
-    use Queueable;
 
     public function __construct(
         public User $employee

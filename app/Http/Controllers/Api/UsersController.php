@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Events\UserCreatedEvent;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -32,6 +33,8 @@ class UsersController extends Controller
         ]);
 
         $user = User::query()->create($data);
+
+        UserCreatedEvent::dispatch($user);
 
         return $user;
     }
