@@ -3,11 +3,11 @@
 namespace App\Providers;
 
 use App\Events\UserCreatedEvent;
-use App\Listeners\SendMessageToLeaderJob;
-use App\Listeners\SendsWelcomeNotificationJob;
-use App\Listeners\SetupBenefits;
-use App\Listeners\SetupPositionJob;
-use App\Listeners\SetupSalaryJob;
+use App\Jobs\SendMessageToLeaderJob;
+use App\Jobs\SendsWelcomeNotificationJob;
+use App\Jobs\SetupBenefits;
+use App\Jobs\SetupPositionJob;
+use App\Jobs\SetupSalaryJob;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;

@@ -2,11 +2,11 @@
 
 namespace App\Observers;
 
-use App\Listeners\SendMessageToLeaderJob;
-use App\Listeners\SendsWelcomeNotificationJob;
-use App\Listeners\SetupBenefits;
-use App\Listeners\SetupPositionJob;
-use App\Listeners\SetupSalaryJob;
+use App\Jobs\SendMessageToLeaderJob;
+use App\Jobs\SendsWelcomeNotificationJob;
+use App\Jobs\SetupBenefits;
+use App\Jobs\SetupPositionJob;
+use App\Jobs\SetupSalaryJob;
 use App\Models\User;
 
 class UserObserver

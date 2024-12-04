@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Actions\CreateNewUser;
 use App\Events\UserCreatedEvent;
 use App\Http\Controllers\Controller;
+use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -20,23 +22,17 @@ class UsersController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(UserStoreRequest $request)
     {
-        $data = request()->validate([
-            'name' => 'required',
-            'email' => 'required|email|unique:users,email',
-            'birthday' => 'nullable|date',
-            'start_date' => 'nullable|date',
-            'position' => 'nullable',
-            'salary' => 'nullable|integer',
-            'password' => 'required|min:8',
-        ]);
 
-        $user = User::query()->create($data);
+        dispatch(new CreateNewUser(
+            $request->validated()
+        ));
 
-        UserCreatedEvent::dispatch($user);
 
-        return $user;
+        return $action->handle(
+            $request->validated()
+        );
     }
 
     /**

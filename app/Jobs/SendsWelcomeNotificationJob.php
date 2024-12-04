@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Listeners;
+namespace App\Jobs;
 
 use App\Events\UserCreatedEvent;
 use App\Models\User;
-use App\Notifications\MensagemDoLiderNotification;
+use App\Notifications\WelcomeNotification;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -12,18 +12,22 @@ use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Support\Facades\Log;
 
-class SendMessageToLeaderJob implements ShouldQueue
+class SendsWelcomeNotificationJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
 
-    public function handle(UserCreatedEvent $event): void
+    public function __construct(
+        public User $user
+    )
     {
-        Log::info('envia email para o líder');
-        $lider = User::query()->find(1);
-        $lider->notify(new MensagemDoLiderNotification($event->user));
+    }
+    public function handle(): void
+    {
+        Log::info('envia notificação de boas-vindas');
+        $this->user->notify(new WelcomeNotification());
     }
 
-    public function failed($exception = null)
+    public function failed($exception = null): void
     {
         Log::error('deu ruim JETETE');
     }
