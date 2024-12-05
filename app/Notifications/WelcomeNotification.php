@@ -2,16 +2,12 @@
 
 namespace App\Notifications;
 
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class WelcomeNotification extends Notification
 {
-    public function __construct()
-    {
-    }
+    public function __construct() {}
 
     public function via($notifiable): array
     {
@@ -30,6 +26,4 @@ class WelcomeNotification extends Notification
     {
         return [];
     }
-
-
 }

@@ -1,22 +1,21 @@
 <?php
 
-namespace App\Jobs;
+namespace App\Brain\Tasks;
 
-use App\Events\UserCreatedEvent;
+use App\Jobs\RequestGymCard;
+use App\Jobs\RequestHealthCard;
+use App\Jobs\RequestPinguimAcademySubscription;
 use App\Models\User;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
 
-class SetupBenefits implements ShouldQueue
+class SetupBenefits
 {
-    use Queueable;
+    use Dispatchable;
 
     public function __construct(
         public User $user
-    )
-    {
-    }
+    ) {}
 
     public function handle(): void
     {
@@ -29,5 +28,4 @@ class SetupBenefits implements ShouldQueue
         RequestHealthCard::dispatch($this->user);
         RequestPinguimAcademySubscription::dispatch($this->user);
     }
-
 }

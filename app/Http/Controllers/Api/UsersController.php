@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Actions\CreateNewUser;
-use App\Events\UserCreatedEvent;
+use App\Brain\Process\CreateUserProcess;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
+use Exception;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -25,14 +25,22 @@ class UsersController extends Controller
     public function store(UserStoreRequest $request)
     {
 
-        dispatch(new CreateNewUser(
-            $request->validated()
-        ));
+        try {
+            /** @var CreateUserProcess $payload */
+            $payload = CreateUserProcess::dispatchSync(
+                $request->validated()
+            );
 
+            return $payload->user;
 
-        return $action->handle(
-            $request->validated()
-        );
+        } catch (Exception $e) {
+
+            report($e);
+
+            return response()->json([
+                'message' => $e->getMessage(),
+            ], 400);
+        }
     }
 
     /**

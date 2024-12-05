@@ -2,11 +2,11 @@
 
 namespace App\Observers;
 
-use App\Jobs\SendMessageToLeaderJob;
-use App\Jobs\SendsWelcomeNotificationJob;
-use App\Jobs\SetupBenefits;
-use App\Jobs\SetupPositionJob;
-use App\Jobs\SetupSalaryJob;
+use App\Brain\Tasks\SendMessageToLeaderJob;
+use App\Brain\Tasks\SendsWelcomeNotificationJob;
+use App\Brain\Tasks\SetupBenefits;
+use App\Brain\Tasks\SetupPositionJob;
+use App\Brain\Tasks\SetupSalaryJob;
 use App\Models\User;
 
 class UserObserver
@@ -19,5 +19,4 @@ class UserObserver
         SetupBenefits::dispatch($user);
         SetupSalaryJob::dispatch($user);
     }
-
 }

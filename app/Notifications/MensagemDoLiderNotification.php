@@ -3,19 +3,14 @@
 namespace App\Notifications;
 
 use App\Models\User;
-use Illuminate\Contracts\Queue\ShouldQueue;
-use Illuminate\Foundation\Queue\Queueable;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
 class MensagemDoLiderNotification extends Notification
 {
-
     public function __construct(
         public User $employee
-    )
-    {
-    }
+    ) {}
 
     public function via($notifiable): array
     {
