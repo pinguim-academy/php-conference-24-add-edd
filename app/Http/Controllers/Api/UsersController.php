@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 use App\Brain\HoraExtra\Processes\JeremisProcess;
 use App\Brain\User\Processes\CreateUserProcess;
+use App\Brain\User\Queries\UserReport;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
@@ -16,8 +17,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-
-
+        return UserReport::run();
     }
 
     /**

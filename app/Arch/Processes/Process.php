@@ -7,7 +7,9 @@ use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Bus;
+use Illuminate\Support\Facades\Context;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 use ReflectionClass;
 
 class Process
@@ -26,6 +28,10 @@ class Process
 
     public function handle()
     {
+        $id = \Str::uuid();
+        Context::push('process', static::class. "::$id");
+        Context::push('process_id', $id->toString());
+
         return $this->chain
             ? $this->chain()
             : $this->run();
@@ -47,9 +53,12 @@ class Process
 
     private function run()
     {
+
+
         DB::beginTransaction();
         try {
             foreach ($this->tasks as $task) {
+
 
                 if (isset($this->payload->cancelProcess)) {
 

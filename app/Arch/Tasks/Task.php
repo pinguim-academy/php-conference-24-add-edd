@@ -4,6 +4,7 @@ namespace App\Arch\Tasks;
 
 use AllowDynamicProperties;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Log;
 
 #[AllowDynamicProperties]
 class Task
@@ -17,6 +18,9 @@ class Task
             $this->payload = (object) $this->payload;
         }
 
+        Log::info('Running Task:: '. static::class, [
+            'payload' => $this->payload,
+        ]);
     }
 
     protected function cancelProcess(): void

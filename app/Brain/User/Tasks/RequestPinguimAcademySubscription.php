@@ -12,6 +12,19 @@ use Illuminate\Support\Facades\Log;
  */
 class RequestPinguimAcademySubscription extends Task implements ShouldQueue
 {
+    /**
+     * Set tags that will be used to identify the task
+     * on the queue management system
+     *
+     * @return string[]
+     */
+    public function tags(): array
+    {
+        return [
+            'user: ' . $this->user->email,
+            'month: ' . now()->format('Y-m'),
+        ];
+    }
 
     public function handle(): void
     {

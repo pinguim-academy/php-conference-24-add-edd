@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Arch\Processes\ProcessesMakeCommand;
+use App\Arch\Queries\QueriesMakeCommand;
 use App\Arch\Tasks\TaskMakeCommand;
 use Illuminate\Auth\Notifications\ResetPassword;
 use Illuminate\Console\Command;
@@ -24,7 +25,8 @@ class AppServiceProvider extends ServiceProvider
 
       $this->commands([
           ProcessesMakeCommand::class,
-          TaskMakeCommand::class
+          TaskMakeCommand::class,
+          QueriesMakeCommand::class
       ]);
     }
 
