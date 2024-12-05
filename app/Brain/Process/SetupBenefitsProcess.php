@@ -9,10 +9,11 @@ use App\Brain\Tasks\RequestPinguimAcademySubscription;
 
 class SetupBenefitsProcess extends Process
 {
+    protected bool $chain = true;
+
     public array $tasks = [
         RequestGymCard::class,
         RequestHealthCard::class,
         RequestPinguimAcademySubscription::class
     ];
-
 }

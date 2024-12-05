@@ -3,15 +3,19 @@
 namespace App\Arch\Process;
 
 use App\Arch\Task\Task;
+use App\Brain\Tasks\RequestGymCard;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
+use Illuminate\Support\Facades\Bus;
 use Illuminate\Support\Facades\DB;
 use ReflectionClass;
 
 class Process
 {
     use Dispatchable;
+
+    protected bool $chain = false;
 
     public function __construct(
         public array|object $payload
@@ -22,6 +26,27 @@ class Process
     }
 
     public function handle()
+    {
+        return $this->chain
+            ? $this->chain()
+            : $this->run();
+    }
+
+    private function chain()
+    {
+        Bus::chain(
+            array_map(
+                fn($task) => new $task($this->payload),
+                $this->tasks
+            )
+        )
+            ->dispatch();
+
+
+        return $this->payload;
+    }
+
+    private function run()
     {
         DB::beginTransaction();
         try {

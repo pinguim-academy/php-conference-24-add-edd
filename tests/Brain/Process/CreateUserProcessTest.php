@@ -18,8 +18,8 @@ test('check if has tasks', function () {
             CreateUser::class,
             SendsWelcomeNotificationJob::class,
             SendMessageToLeaderJob::class,
+            SetupBenefitsProcess::class,
             SetupPositionJob::class,
             SetupSalaryJob::class,
-            SetupBenefitsProcess::class,
         ]);
 });
