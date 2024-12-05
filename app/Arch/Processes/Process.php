@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Arch\Process;
+namespace App\Arch\Processes;
 
-use App\Arch\Task\Task;
+use App\Arch\Tasks\Task;
 use App\Brain\Tasks\RequestGymCard;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;

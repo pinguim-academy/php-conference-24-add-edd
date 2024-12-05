@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Brain\Process;
+namespace App\Brain\Processes;
 
-use App\Arch\Process\Process;
+use App\Arch\Processes\Process;
 use App\Brain\Tasks\CreateUser;
 use App\Brain\Tasks\SendMessageToLeaderJob;
 use App\Brain\Tasks\SendsWelcomeNotificationJob;

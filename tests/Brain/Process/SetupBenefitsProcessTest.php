@@ -1,7 +1,7 @@
 <?php
 
-use App\Brain\Process\CreateUserProcess;
-use App\Brain\Process\SetupBenefitsProcess;
+use App\Brain\Processes\CreateUserProcess;
+use App\Brain\Processes\SetupBenefitsProcess;
 use App\Brain\Tasks\CreateUser;
 use App\Brain\Tasks\RequestGymCard;
 use App\Brain\Tasks\RequestHealthCard;

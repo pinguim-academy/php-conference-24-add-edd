@@ -2,7 +2,10 @@
 
 namespace App\Providers;
 
+use App\Arch\Processes\ProcessesMakeCommand;
+use App\Arch\Tasks\TaskMakeCommand;
 use Illuminate\Auth\Notifications\ResetPassword;
+use Illuminate\Console\Command;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\ServiceProvider;
 
@@ -19,6 +22,10 @@ class AppServiceProvider extends ServiceProvider
             $this->app->register(TelescopeServiceProvider::class);
         }
 
+      $this->commands([
+          ProcessesMakeCommand::class,
+          TaskMakeCommand::class
+      ]);
     }
 
     /**

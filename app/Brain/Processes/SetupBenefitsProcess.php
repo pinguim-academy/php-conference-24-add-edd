@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Brain\Process;
+namespace App\Brain\Processes;
 
-use App\Arch\Process\Process;
+use App\Arch\Processes\Process;
 use App\Brain\Tasks\RequestGymCard;
 use App\Brain\Tasks\RequestHealthCard;
 use App\Brain\Tasks\RequestPinguimAcademySubscription;

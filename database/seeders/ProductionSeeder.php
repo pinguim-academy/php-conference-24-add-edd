@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Brain\Process\CreateUserProcess;
+use App\Brain\Processes\CreateUserProcess;
 use Illuminate\Database\Seeder;
 
 class ProductionSeeder extends Seeder

@@ -2,7 +2,7 @@
 
 namespace App\Brain\Tasks;
 
-use App\Arch\Task\Task;
+use App\Arch\Tasks\Task;
 use App\Models\User;
 use App\Notifications\WelcomeNotification;
 use Illuminate\Contracts\Queue\ShouldQueue;

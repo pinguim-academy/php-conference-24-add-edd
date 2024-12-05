@@ -2,7 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Brain\Process\CreateUserProcess;
+use App\Brain\Processes\CreateUserProcess;
 use App\Brain\Tasks\CreateUser;
 use Illuminate\Console\Command;
 

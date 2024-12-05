@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Brain\Process\CreateUserProcess;
+use App\Brain\Processes\CreateUserProcess;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Arch\Task;
+namespace App\Arch\Tasks;
 
 use AllowDynamicProperties;
 use Illuminate\Foundation\Queue\Queueable;
