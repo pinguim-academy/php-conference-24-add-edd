@@ -3,23 +3,23 @@
 use App\Brain\Process\CreateUserProcess;
 use App\Brain\Process\SetupBenefitsProcess;
 use App\Brain\Tasks\CreateUser;
+use App\Brain\Tasks\RequestGymCard;
+use App\Brain\Tasks\RequestHealthCard;
+use App\Brain\Tasks\RequestPinguimAcademySubscription;
 use App\Brain\Tasks\SendMessageToLeaderJob;
 use App\Brain\Tasks\SendsWelcomeNotificationJob;
 use App\Brain\Tasks\SetupPositionJob;
 use App\Brain\Tasks\SetupSalaryJob;
 
 test('check if has tasks', function () {
-    $process = new CreateUserProcess([]);
+    $process = new SetupBenefitsProcess([]);
 
 
     expect($process)
         ->tasks
         ->toEqual([
-            CreateUser::class,
-            SendsWelcomeNotificationJob::class,
-            SendMessageToLeaderJob::class,
-            SetupPositionJob::class,
-            SetupSalaryJob::class,
-            SetupBenefitsProcess::class,
+            RequestGymCard::class,
+            RequestHealthCard::class,
+            RequestPinguimAcademySubscription::class
         ]);
 });

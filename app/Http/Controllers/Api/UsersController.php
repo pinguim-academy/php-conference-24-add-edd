@@ -25,7 +25,7 @@ class UsersController extends Controller
     public function store(UserStoreRequest $request)
     {
 
-        try {
+//        try {
             /** @var CreateUserProcess $payload */
             $payload = CreateUserProcess::dispatchSync(
                 $request->validated()
@@ -33,14 +33,14 @@ class UsersController extends Controller
 
             return $payload->user;
 
-        } catch (Exception $e) {
-
-            report($e);
-
-            return response()->json([
-                'message' => $e->getMessage(),
-            ], 400);
-        }
+//        } catch (Exception $e) {
+//
+//            report($e);
+//
+//            return response()->json([
+//                'message' => $e->getMessage(),
+//            ], 400);
+//        }
     }
 
     /**

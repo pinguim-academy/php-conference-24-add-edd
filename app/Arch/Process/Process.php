@@ -2,6 +2,7 @@
 
 namespace App\Arch\Process;
 
+use App\Arch\Task\Task;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
@@ -43,7 +44,7 @@ class Process
                     $this->payload
                 );
 
-                $this->payload = $temp->payload;
+                $this->payload = $temp instanceof Task ? $temp->payload: $temp;
             }
             DB::commit();
         } catch (Exception $e) {

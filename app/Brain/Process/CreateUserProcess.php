@@ -21,5 +21,6 @@ class CreateUserProcess extends Process
         SendMessageToLeaderJob::class,
         SetupPositionJob::class,
         SetupSalaryJob::class,
+        SetupBenefitsProcess::class,
     ];
 }

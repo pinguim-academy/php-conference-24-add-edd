@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Brain\Process\CreateUserProcess;
+use App\Brain\Tasks\CreateUser;
 use Illuminate\Console\Command;
 
 class CreateUserCommand extends Command
@@ -14,7 +15,7 @@ class CreateUserCommand extends Command
     public function handle(): void
     {
 
-        CreateUserProcess::dispatchSync([
+        CreateUser::dispatchSync([
             'name' => 'John Doe',
             'email' => 'joe@doe.com',
             'password' => 'password',

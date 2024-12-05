@@ -2,9 +2,6 @@
 
 namespace App\Brain\Tasks;
 
-use App\Jobs\RequestGymCard;
-use App\Jobs\RequestHealthCard;
-use App\Jobs\RequestPinguimAcademySubscription;
 use App\Models\User;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Support\Facades\Log;
