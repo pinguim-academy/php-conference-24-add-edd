@@ -2,8 +2,7 @@
 
 namespace App\Console\Commands;
 
-use App\Brain\Processes\CreateUserProcess;
-use App\Brain\Tasks\CreateUser;
+use App\Brain\User\Tasks\CreateUser;
 use Illuminate\Console\Command;
 
 class CreateUserCommand extends Command

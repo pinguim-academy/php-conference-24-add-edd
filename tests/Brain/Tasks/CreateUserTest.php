@@ -1,8 +1,7 @@
 <?php
 
-use App\Brain\Tasks\CreateUser;
+use App\Brain\User\Tasks\CreateUser;
 use App\Models\User;
-
 use function Pest\Laravel\assertDatabaseHas;
 
 it('needs to create a new user', function () {

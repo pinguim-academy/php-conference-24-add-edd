@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Brain\Processes;
+namespace App\Brain\User\Processes;
 
 use App\Arch\Processes\Process;
-use App\Brain\Tasks\CreateUser;
-use App\Brain\Tasks\SendMessageToLeaderJob;
-use App\Brain\Tasks\SendsWelcomeNotificationJob;
-use App\Brain\Tasks\SetupPositionJob;
-use App\Brain\Tasks\SetupSalaryJob;
+use App\Brain\User\Tasks\CreateUser;
+use App\Brain\User\Tasks\SendMessageToLeaderJob;
+use App\Brain\User\Tasks\SendsWelcomeNotificationJob;
+use App\Brain\User\Tasks\SetupPositionJob;
+use App\Brain\User\Tasks\SetupSalaryJob;
 use App\Models\User;
 
 /**

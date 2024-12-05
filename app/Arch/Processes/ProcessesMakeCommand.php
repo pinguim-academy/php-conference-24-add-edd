@@ -2,10 +2,11 @@
 
 namespace App\Arch\Processes;
 
+use App\Arch\BaseCommand;
 use Illuminate\Console\GeneratorCommand;
 use Symfony\Component\Console\Input\InputArgument;
 
-class ProcessesMakeCommand extends GeneratorCommand
+class ProcessesMakeCommand extends BaseCommand
 {
     protected $name = 'make:process';
 
@@ -20,13 +21,16 @@ class ProcessesMakeCommand extends GeneratorCommand
 
     protected function getDefaultNamespace($rootNamespace): string
     {
-        return "$rootNamespace\Brain\Processes";
+        $domain = $this->argument('domain');
+
+        return "$rootNamespace\Brain\\$domain\Processes";
     }
 
     protected function getArguments():array
     {
         return [
             ['name', InputArgument::REQUIRED, 'The name of the process. Ex.: ExampleProcess.'],
+            ['domain', InputArgument::OPTIONAL, 'The name of the domain. Ex.: User'],
         ];
     }
 }

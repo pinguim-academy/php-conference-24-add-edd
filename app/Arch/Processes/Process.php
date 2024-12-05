@@ -3,7 +3,6 @@
 namespace App\Arch\Processes;
 
 use App\Arch\Tasks\Task;
-use App\Brain\Tasks\RequestGymCard;
 use Exception;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;

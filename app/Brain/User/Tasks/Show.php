@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-namespace App\Brain\Tasks;
+namespace App\Brain\User\Tasks;
 
 use App\Arch\Tasks\Task;
 

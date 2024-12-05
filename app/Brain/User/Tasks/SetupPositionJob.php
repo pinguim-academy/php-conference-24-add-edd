@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brain\Tasks;
+namespace App\Brain\User\Tasks;
 
 use App\Arch\Tasks\Task;
 use App\Models\User;
@@ -9,19 +9,17 @@ use Illuminate\Support\Facades\Log;
 /**
  * @property-read User $user
  */
-class SetupSalaryJob extends Task
+class SetupPositionJob extends Task
 {
     public function handle(): self
     {
-        Log::info('configurar o histórico de salário', [
+        Log::info('configurar o histórico de cargo', [
             'user_id' => $this->user->id,
-            'salary' => $this->user->salary,
+            'position' => $this->user->position,
             'start_date' => $this->user->start_date,
         ]);
 
-        $this->user->update([
-            'salary' => '9999999',
-        ]);
+//        throw new \Exception('Erro ao configurar o cargo');
 
         return $this;
     }

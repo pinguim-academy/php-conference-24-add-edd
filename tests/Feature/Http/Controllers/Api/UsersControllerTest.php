@@ -2,7 +2,7 @@
 
 namespace Tests\Http\Controllers\Api;
 
-use App\Brain\Processes\CreateUserProcess;
+use App\Brain\User\Processes\CreateUserProcess;
 use App\Models\User;
 use Illuminate\Support\Facades\Bus;
 use function Pest\Laravel\post;

@@ -2,11 +2,11 @@
 
 namespace App\Observers;
 
-use App\Brain\Tasks\SendMessageToLeaderJob;
-use App\Brain\Tasks\SendsWelcomeNotificationJob;
-use App\Brain\Tasks\SetupBenefits;
-use App\Brain\Tasks\SetupPositionJob;
-use App\Brain\Tasks\SetupSalaryJob;
+use App\Brain\User\Tasks\SendMessageToLeaderJob;
+use App\Brain\User\Tasks\SendsWelcomeNotificationJob;
+use App\Brain\User\Tasks\SetupBenefits;
+use App\Brain\User\Tasks\SetupPositionJob;
+use App\Brain\User\Tasks\SetupSalaryJob;
 use App\Models\User;
 
 class UserObserver

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers\Api;
 
-use App\Brain\Processes\CreateUserProcess;
+use App\Brain\HoraExtra\Processes\JeremisProcess;
+use App\Brain\User\Processes\CreateUserProcess;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
-use Exception;
 use Illuminate\Http\Request;
 
 class UsersController extends Controller
@@ -16,7 +16,8 @@ class UsersController extends Controller
      */
     public function index()
     {
-        //
+
+
     }
 
     /**

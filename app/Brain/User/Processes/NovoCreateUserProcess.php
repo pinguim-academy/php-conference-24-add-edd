@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Brain\Processes;
+namespace App\Brain\User\Processes;
 
 use App\Arch\Processes\Process;
-use App\Brain\Tasks\CreateUser;
+use App\Brain\User\Tasks\CreateUser;
 
 class NovoCreateUserProcess extends Process
 {

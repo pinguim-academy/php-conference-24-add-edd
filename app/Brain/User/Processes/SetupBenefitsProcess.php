@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Brain\Processes;
+namespace App\Brain\User\Processes;
 
 use App\Arch\Processes\Process;
-use App\Brain\Tasks\RequestGymCard;
-use App\Brain\Tasks\RequestHealthCard;
-use App\Brain\Tasks\RequestPinguimAcademySubscription;
+use App\Brain\User\Tasks\RequestGymCard;
+use App\Brain\User\Tasks\RequestHealthCard;
+use App\Brain\User\Tasks\RequestPinguimAcademySubscription;
 
 class SetupBenefitsProcess extends Process
 {

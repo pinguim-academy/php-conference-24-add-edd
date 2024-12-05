@@ -1,15 +1,9 @@
 <?php
 
-use App\Brain\Processes\CreateUserProcess;
-use App\Brain\Processes\SetupBenefitsProcess;
-use App\Brain\Tasks\CreateUser;
-use App\Brain\Tasks\RequestGymCard;
-use App\Brain\Tasks\RequestHealthCard;
-use App\Brain\Tasks\RequestPinguimAcademySubscription;
-use App\Brain\Tasks\SendMessageToLeaderJob;
-use App\Brain\Tasks\SendsWelcomeNotificationJob;
-use App\Brain\Tasks\SetupPositionJob;
-use App\Brain\Tasks\SetupSalaryJob;
+use App\Brain\User\Processes\SetupBenefitsProcess;
+use App\Brain\User\Tasks\RequestGymCard;
+use App\Brain\User\Tasks\RequestHealthCard;
+use App\Brain\User\Tasks\RequestPinguimAcademySubscription;
 
 test('check if has tasks', function () {
     $process = new SetupBenefitsProcess([]);

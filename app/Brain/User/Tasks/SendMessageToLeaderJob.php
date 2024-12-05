@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brain\Tasks;
+namespace App\Brain\User\Tasks;
 
 use App\Arch\Tasks\Task;
 use App\Models\User;

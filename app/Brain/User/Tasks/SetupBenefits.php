@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Brain\Tasks;
+namespace App\Brain\User\Tasks;
 
 use App\Models\User;
 use Illuminate\Foundation\Bus\Dispatchable;
